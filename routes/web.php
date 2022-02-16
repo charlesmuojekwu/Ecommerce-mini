@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app');
 });
+
+/// redirect any other url
+Route::any('/{any}', function ($id) {
+    return view('app');
+})->where('any','.*'); //catch all url combination
